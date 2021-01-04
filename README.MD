@@ -2,7 +2,8 @@
 
 ## About package
 
-This package provide function for determition file's type using [file signature](https://en.wikipedia.org/wiki/File_format#Magic_number).
+This package provide function for determition file's type using [file signature](https://en.wikipedia.org/wiki/File_format#Magic_number).  
+Currently version: 1.0
 
 ### Installation
 
@@ -16,15 +17,17 @@ It's very simple.
 package main
 
 import(
+    "fmt"
 	"github.com/nagayev/detect-arhive-type"
 )
 
 func main(){
 
-	type,err:=dat.getType("test_files/test.zip")
+	type,err:=dat.getTypeString("test_files/test.zip")
 	if err!=nil{
 		// Handle your error
-	}
+    }
+    fmt.Println(type) //zip
 }
 ```
 
@@ -32,6 +35,8 @@ func main(){
 
 - tar.gz
 - zip
+- gz
+- 7z
 
 ## Contributing
 
