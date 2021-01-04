@@ -1,7 +1,6 @@
-// Copyright 2015 Geofrey Ernest <geofreyernest@live.com>. All rights reserved.
+//Package dat is a package for detection arhive type
+// Copyright 2021 Marat Nagayev <nagaevmt49@gmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT-style
-// license that can be found in the LICENSE file.
-
 package dat
 
 import (
@@ -9,9 +8,8 @@ import (
 	"testing"
 )
 
-func testGetTypeCode(path string,expectedCode int) error{
+func testGetTypeCode(path string, expectedCode int) error{
 	actualCode,err:=getTypeCode(path)
-	//expectedCode:=TARGZ
 	if err!=nil{
 		return err
 	}
@@ -32,12 +30,14 @@ func TestZip(t *testing.T){
 		t.Errorf("Failed with error %v",err)
 	}
 }
-//TODO: 
-func TestGZ(t *testing.T){}
-//TODO:
-
 func TestZ7(t *testing.T){
 	err:=testGetTypeCode("test_files/test.7z",Z7)
+	if err!=nil{
+		t.Errorf("Failed with error %v",err)
+	}
+}
+func TestXZ(t *testing.T){
+	err:=testGetTypeCode("test_files/test.tar.xz",XZ)
 	if err!=nil{
 		t.Errorf("Failed with error %v",err)
 	}

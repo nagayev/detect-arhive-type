@@ -1,2 +1,4 @@
 # Binary
 detect-arhive-type
+# Logs (produced by git hooks)
+*.log
